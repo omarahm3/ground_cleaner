@@ -1,0 +1,18 @@
+{
+  "name": "ground_cleaner",
+  "version": "1.0.0",
+  "description": "Simple Nodejs Script to clean your Ground.exe infected files, It does not delete the virus but it clean the files after taking care of the virus by any antivirus program",
+  "main": "script.js",
+  "dependencies": {
+    "node-dir": "^0.1.17",
+    "process": "^0.11.10",
+    "prompt": "^1.0.0",
+    "walk": "^2.3.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Omar Ahmed",
+  "license": "ISC"
+}
