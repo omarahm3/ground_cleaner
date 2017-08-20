@@ -2,7 +2,7 @@
 This is a Nodejs script to clean infected Ground.exe files.
 I created it to clean all the files infected by this damn virus after using Malwarebytes to scan the whole filesystem, closing Ground.exe from taskbar and disabling its service from starting on windows start-up.
 
-# Steps i used to get rid of the virus: 
+# Steps i did to get rid of the virus: 
 1- Scan computer with Malwarebytes, and let it delete everything suspicious  
 2- Enable (Show hidden files, folders, and drives) and uncheck (Hide protected operating system files)  
 3- Noticed that every infected exe, ico, or jpg file is a size of 522kb  
