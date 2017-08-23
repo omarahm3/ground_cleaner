@@ -3,13 +3,16 @@ var path = require( 'path' )
 var process = require( "process" )
 var dir = require('node-dir')
 
+process.argv.shift()  // skip node.exe
+process.argv.shift()  // skip name of js file
 
-/* PUT THE PATH OF THE INFECTED FOLDER BETWEEN " " DOWN HERE */
-/* -----> */ var INPUT_DIR = "L:/STUDY" /* <------ */
-/* PUT THE PATH OF THE INFECTED FOLDER BETWEEN " " ^UP HERE*/
+/* ------------------ I JUST LIKE DOING THIS ----------------- */
+/* -----> */ var INPUT_DIR = process.argv.join(" ") /* <------ */
+/* ------------------ I JUST LIKE DOING THIS ----------------- */
 
-if (INPUT_DIR === "PUT_PATH_HERE"){
-	console.log('Please open script.js file and put the path to the infected folder on line (11) between the "" (  "PUT_PATH_HERE"  )')
+
+if (INPUT_DIR === ""){
+	console.log('Please enter the path of the folder you want to clean')
 	return;
 }
 
@@ -30,8 +33,9 @@ dir.files(INPUT_DIR, function(err, files) {
 		var completeFileName = value[value.length-1]
 		var file_ext = completeFileName.split('.')[1]
 		var file_name = completeFileName.split('.')[0]
+		var trailing_ext = completeFileName.substring(completeFileName.length - 3, completeFileName.length)
 
-		if ( ( file_ext == 'exe' || file_ext == 'ico'  ) && file_name[0] === 'g') {
+		if ( ( file_ext == 'exe' || trailing_ext == 'exe' || file_ext == 'ico'  ) && file_name[0] === 'g') {
 			
 			fs.stat(file_path, function (err, stat) {
 				if (err) {
